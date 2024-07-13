@@ -22,6 +22,7 @@ public class ElevatorSystem implements Observable{
             }
         }
         return INSTANCE;
+
     }
 
     public void addElevators(Elevator elevator) {
