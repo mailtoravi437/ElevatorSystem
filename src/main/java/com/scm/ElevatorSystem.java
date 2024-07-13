@@ -5,7 +5,7 @@ import com.scm.button.Direction;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ElevatorSystem {
+public class ElevatorSystem implements Observable{
     private static ElevatorSystem INSTANCE;
     private final List<Elevator> elevators;
 
@@ -33,10 +33,10 @@ public class ElevatorSystem {
         notifyElevators(request);
     }
 
-    private void notifyElevators(Request request) {
+    public void notifyElevators(Request request) {
         Elevator closestElevator = findClosestElevator(request);
         if (closestElevator != null) {
-            closestElevator.addRequest(request);
+            closestElevator.update(request);
         }
     }
 
